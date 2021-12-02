@@ -34,7 +34,7 @@ class Day2Part1: PartRunner
       }
     }
 
-    return "X: \(x) Y: \(y) Result \(x*y)"
+    return "\(x*y)"
   }
 
   override func cleanUp()
