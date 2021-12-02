@@ -12,6 +12,9 @@
 		1BEA09E42758033F00577B97 /* Day1Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA09E32758033F00577B97 /* Day1Input.swift */; };
 		1BEA09E82758037500577B97 /* Day1Part2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA09E72758037500577B97 /* Day1Part2.swift */; };
 		1BEA09EA275804CB00577B97 /* PartRunner.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA09E9275804CB00577B97 /* PartRunner.swift */; };
+		1BEA09ED2758E96000577B97 /* Day2Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA09EC2758E96000577B97 /* Day2Part1.swift */; };
+		1BEA09EF2758E96A00577B97 /* Day2Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA09EE2758E96A00577B97 /* Day2Input.swift */; };
+		1BEA09F12758EB7F00577B97 /* Day2Part2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BEA09F02758EB7F00577B97 /* Day2Part2.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -33,6 +36,9 @@
 		1BEA09E32758033F00577B97 /* Day1Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1Input.swift; sourceTree = "<group>"; };
 		1BEA09E72758037500577B97 /* Day1Part2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day1Part2.swift; sourceTree = "<group>"; };
 		1BEA09E9275804CB00577B97 /* PartRunner.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartRunner.swift; sourceTree = "<group>"; };
+		1BEA09EC2758E96000577B97 /* Day2Part1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2Part1.swift; sourceTree = "<group>"; };
+		1BEA09EE2758E96A00577B97 /* Day2Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2Input.swift; sourceTree = "<group>"; };
+		1BEA09F02758EB7F00577B97 /* Day2Part2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day2Part2.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +72,7 @@
 			isa = PBXGroup;
 			children = (
 				1BEA09E22758032600577B97 /* Day1 */,
+				1BEA09EB2758E94F00577B97 /* Day2 */,
 				1BEA09D9275802E300577B97 /* main.swift */,
 				1BEA09E9275804CB00577B97 /* PartRunner.swift */,
 			);
@@ -80,6 +87,16 @@
 				1BEA09E72758037500577B97 /* Day1Part2.swift */,
 			);
 			path = Day1;
+			sourceTree = "<group>";
+		};
+		1BEA09EB2758E94F00577B97 /* Day2 */ = {
+			isa = PBXGroup;
+			children = (
+				1BEA09EC2758E96000577B97 /* Day2Part1.swift */,
+				1BEA09EE2758E96A00577B97 /* Day2Input.swift */,
+				1BEA09F02758EB7F00577B97 /* Day2Part2.swift */,
+			);
+			path = Day2;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,8 +160,11 @@
 				1BEA09DA275802E300577B97 /* main.swift in Sources */,
 				1BEA09EA275804CB00577B97 /* PartRunner.swift in Sources */,
 				1BEA09E82758037500577B97 /* Day1Part2.swift in Sources */,
+				1BEA09F12758EB7F00577B97 /* Day2Part2.swift in Sources */,
 				1BEA09E12758031800577B97 /* Day1Part1.swift in Sources */,
+				1BEA09ED2758E96000577B97 /* Day2Part1.swift in Sources */,
 				1BEA09E42758033F00577B97 /* Day1Input.swift in Sources */,
+				1BEA09EF2758E96A00577B97 /* Day2Input.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
