@@ -73,7 +73,7 @@ class Field2D<T: Comparable>
         }
       }
     }
-    height = max(height, coordinate.y + 1)
+    height = Swift.max(height, coordinate.y + 1)
 
     for i in 0..<field.count
     {
@@ -85,7 +85,7 @@ class Field2D<T: Comparable>
         }
       }
     }
-    width = max(width, coordinate.x + 1)
+    width = Swift.max(width, coordinate.x + 1)
   }
 
   func getHeight() -> Int
@@ -115,6 +115,11 @@ class Field2D<T: Comparable>
   func getValue(at coordinate: Coordinate) -> T
   {
     return ((coordinate.y < height) && (coordinate.x < width)) ? field[coordinate.y][coordinate.x] : defaultValue
+  }
+
+  func getValue(at coordinate: Coordinate) -> T?
+  {
+    return ((coordinate.y >= 0) && (coordinate.x >= 0) && (coordinate.y < height) && (coordinate.x < width)) ? field[coordinate.y][coordinate.x] : nil
   }
 
   func toString() -> String
@@ -177,6 +182,34 @@ class Field2D<T: Comparable>
       alterationMethod(value, currentCoordinate)
     }
   }
+
+  func getNeighbours(of coordinate: Coordinate) -> [T]
+  {
+    var neighbourCoordinates: [Coordinate] = []
+
+    neighbourCoordinates.append(Coordinate(y: coordinate.y-1, x: coordinate.x))
+    neighbourCoordinates.append(Coordinate(y: coordinate.y, x: coordinate.x-1))
+    neighbourCoordinates.append(Coordinate(y: coordinate.y+1, x: coordinate.x))
+    neighbourCoordinates.append(Coordinate(y: coordinate.y, x: coordinate.x+1))
+
+    if diagonalsEnabled
+    {
+      neighbourCoordinates.append(Coordinate(y: coordinate.y-1, x: coordinate.x-1))
+      neighbourCoordinates.append(Coordinate(y: coordinate.y+1, x: coordinate.x-1))
+      neighbourCoordinates.append(Coordinate(y: coordinate.y+1, x: coordinate.x+1))
+      neighbourCoordinates.append(Coordinate(y: coordinate.y-1, x: coordinate.x+1))
+    }
+
+    var neighbours: [T] = []
+    for neighbour in neighbourCoordinates
+    {
+      if let neighbourValue: T = getValue(at: neighbour)
+      {
+        neighbours.append(neighbourValue)
+      }
+    }
+    return neighbours
+  }
 }
 
 extension Field2D where T: Numeric
@@ -193,5 +226,38 @@ extension Field2D where T: Numeric
   func addRange(_ value: T, atRange range: CoordinateRange)
   {
     alterRange(value: value, atRange: range, withMethod: addValue)
+  }
+}
+
+extension Field2D: Sequence
+{
+  struct Iterator: IteratorProtocol
+  {
+    let field: Field2D
+    let coordinate: Coordinate
+
+    init(_ field: Field2D)
+    {
+      self.field = field
+      self.coordinate = Coordinate(y: 0, x: 0)
+    }
+
+    mutating func next() -> Coordinate?
+    {
+      let nextCoordinate: Coordinate = Coordinate(y: coordinate.y, x: coordinate.x)
+      coordinate.x += 1
+      if field.width == coordinate.x
+      {
+        coordinate.x = 0
+        coordinate.y += 1
+      }
+
+      return field.height == nextCoordinate.y ? nil : nextCoordinate
+    }
+  }
+
+  func makeIterator() -> Iterator
+  {
+    return Iterator(self)
   }
 }

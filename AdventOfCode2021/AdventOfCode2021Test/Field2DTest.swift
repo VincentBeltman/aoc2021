@@ -194,6 +194,96 @@ class Field2DTest: XCTestCase
     XCTAssert(3 == intField.getValue(at: IntField2D.Coordinate(y: 1, x: 5)))
   }
 
+  func testIterator()
+  {
+    let intField: IntField2D = IntField2D(defaultValue: 0)
+    intField.setRange(1, atRange: IntField2D.CoordinateRange(start: IntField2D.Coordinate(y: 0, x: 0), end: IntField2D.Coordinate(y: 0, x: 4)))
+    intField.setRange(2, atRange: IntField2D.CoordinateRange(start: IntField2D.Coordinate(y: 1, x: 0), end: IntField2D.Coordinate(y: 1, x: 4)))
+    intField.setRange(3, atRange: IntField2D.CoordinateRange(start: IntField2D.Coordinate(y: 2, x: 0), end: IntField2D.Coordinate(y: 2, x: 4)))
+    intField.setRange(4, atRange: IntField2D.CoordinateRange(start: IntField2D.Coordinate(y: 3, x: 0), end: IntField2D.Coordinate(y: 3, x: 4)))
+    intField.setRange(5, atRange: IntField2D.CoordinateRange(start: IntField2D.Coordinate(y: 4, x: 0), end: IntField2D.Coordinate(y: 4, x: 4)))
+
+    var x = 0
+    var y = 0
+    for coordinate in intField
+    {
+      XCTAssert(coordinate.x == x)
+      XCTAssert(coordinate.y == y)
+      XCTAssert(intField.getValue(at: coordinate) == y+1)
+      x += 1
+      if x == 5
+      {
+        x = 0
+        y += 1
+      }
+    }
+  }
+
+  func testNeighbours()
+  {
+    let intField: IntField2D = IntField2D(defaultValue: 0)
+    intField.setValue(0, at: IntField2D.Coordinate(y: 0, x: 0))
+    intField.setValue(1, at: IntField2D.Coordinate(y: 0, x: 1))
+    intField.setValue(2, at: IntField2D.Coordinate(y: 0, x: 2))
+    intField.setValue(3, at: IntField2D.Coordinate(y: 1, x: 0))
+    intField.setValue(4, at: IntField2D.Coordinate(y: 1, x: 1))
+    intField.setValue(5, at: IntField2D.Coordinate(y: 1, x: 2))
+    intField.setValue(6, at: IntField2D.Coordinate(y: 2, x: 0))
+    intField.setValue(7, at: IntField2D.Coordinate(y: 2, x: 1))
+    intField.setValue(8, at: IntField2D.Coordinate(y: 2, x: 2))
+
+    let neighboursof00: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 0, x: 0))
+    XCTAssert(neighboursof00.contains(1))
+    XCTAssert(neighboursof00.contains(3))
+    XCTAssert(neighboursof00.count == 2)
+
+    let neighboursof01: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 0, x: 1))
+    XCTAssert(neighboursof01.contains(0))
+    XCTAssert(neighboursof01.contains(2))
+    XCTAssert(neighboursof01.contains(4))
+    XCTAssert(neighboursof01.count == 3)
+
+    let neighboursof02: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 0, x: 2))
+    XCTAssert(neighboursof02.contains(1))
+    XCTAssert(neighboursof02.contains(5))
+    XCTAssert(neighboursof02.count == 2)
+
+    let neighboursof10: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 1, x: 0))
+    XCTAssert(neighboursof10.contains(0))
+    XCTAssert(neighboursof10.contains(4))
+    XCTAssert(neighboursof10.contains(6))
+    XCTAssert(neighboursof10.count == 3)
+
+    let neighboursof11: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 1, x: 1))
+    XCTAssert(neighboursof11.contains(1))
+    XCTAssert(neighboursof11.contains(3))
+    XCTAssert(neighboursof11.contains(5))
+    XCTAssert(neighboursof11.contains(7))
+    XCTAssert(neighboursof11.count == 4)
+
+    let neighboursof12: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 1, x: 2))
+    XCTAssert(neighboursof12.contains(2))
+    XCTAssert(neighboursof12.contains(4))
+    XCTAssert(neighboursof12.contains(8))
+    XCTAssert(neighboursof12.count == 3)
+
+    let neighboursof20: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 2, x: 0))
+    XCTAssert(neighboursof20.contains(3))
+    XCTAssert(neighboursof20.contains(7))
+    XCTAssert(neighboursof20.count == 2)
+
+    let neighboursof21: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 2, x: 1))
+    XCTAssert(neighboursof21.contains(6))
+    XCTAssert(neighboursof21.contains(4))
+    XCTAssert(neighboursof21.contains(8))
+    XCTAssert(neighboursof21.count == 3)
+
+    let neighboursof22: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 2, x: 2))
+    XCTAssert(neighboursof22.contains(5))
+    XCTAssert(neighboursof22.contains(7))
+    XCTAssert(neighboursof22.count == 2)
+  }
+
   func testDay5Part1()
   {
     let partRunner: Day5Part1 = Day5Part1(verbose: true)
@@ -204,6 +294,12 @@ class Field2DTest: XCTestCase
   {
     let partRunner: Day5Part2 = Day5Part2(verbose: true)
     XCTAssert("12" == partRunner.doStuff(with: Day5Input.EXAMPLE_PART_2))
+  }
+
+  func testDay9Part1()
+  {
+    let partRunner: Day9Part1 = Day9Part1(verbose: true)
+    XCTAssert("15" == partRunner.doStuff(with: Day9Input.EXAMPLE))
   }
 }
 
