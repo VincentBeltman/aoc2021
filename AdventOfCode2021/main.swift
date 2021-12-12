@@ -69,5 +69,26 @@ import Foundation
 //let part1Runner: Day9Part1 = Day9Part1(verbose: false)
 //part1Runner.run(input: Day9Input.PUZZLE_INPUT)
 
-let part1Runner: Day9Part2 = Day9Part2(verbose: false)
-part1Runner.run(input: Day9Input.PUZZLE_INPUT)
+//let part1Runner: Day9Part2 = Day9Part2(verbose: false)
+//part1Runner.run(input: Day9Input.PUZZLE_INPUT)
+
+// MARK: DAy10
+//let part1Runner: Day10Part1 = Day10Part1(verbose: false)
+//part1Runner.run(input: Day10Input.PUZZLE_INPUT)
+
+//let part2Runner: Day10Part2 = Day10Part2(verbose: false)
+//part2Runner.run(input: Day10Input.PUZZLE_INPUT)
+
+// MARK: Day11
+//let part1Runner: Day11Part1 = Day11Part1(verbose: false)
+//part1Runner.run(input: Day11Input.PUZZLE_INPUT)
+
+//let part2Runner: Day11Part2 = Day11Part2(verbose: false)
+//part2Runner.run(input: Day11Input.PUZZLE_INPUT)
+
+// MARK: Day12
+//let part1Runner: Day12Part1 = Day12Part1(verbose: false)
+//part1Runner.run(input: Day12Input.PUZZLE_INPUT)
+
+let part2Runner: Day12Part2 = Day12Part2(verbose: false)
+part2Runner.run(input: Day12Input.PUZZLE_INPUT)

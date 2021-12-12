@@ -183,7 +183,7 @@ class Field2D<T: Comparable>
     }
   }
 
-  func getNeighbours(of coordinate: Coordinate) -> [T]
+  func getNeighbourCoordinates(of coordinate: Coordinate) -> [Coordinate]
   {
     var neighbourCoordinates: [Coordinate] = []
 
@@ -200,8 +200,13 @@ class Field2D<T: Comparable>
       neighbourCoordinates.append(Coordinate(y: coordinate.y-1, x: coordinate.x+1))
     }
 
+    return neighbourCoordinates
+  }
+
+  func getNeighbours(of coordinate: Coordinate) -> [T]
+  {
     var neighbours: [T] = []
-    for neighbour in neighbourCoordinates
+    for neighbour in getNeighbourCoordinates(of: coordinate)
     {
       if let neighbourValue: T = getValue(at: neighbour)
       {
