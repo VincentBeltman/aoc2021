@@ -112,6 +112,21 @@ class Field2D<T: Comparable>
     alterRange(value: value, atRange: range, withMethod: setValue)
   }
 
+  func cutHorizontal(from index: Int)
+  {
+    field.removeLast(height - index)
+    height = index
+  }
+
+  func cutVertical(from index: Int)
+  {
+    for i in field.indices
+    {
+      field[i].removeLast(width - index)
+    }
+    width = index
+  }
+
   func getValue(at coordinate: Coordinate) -> T
   {
     return ((coordinate.y < height) && (coordinate.x < width)) ? field[coordinate.y][coordinate.x] : defaultValue
@@ -142,6 +157,19 @@ class Field2D<T: Comparable>
     for row in field
     {
       for cell in row where cell >= value
+      {
+        count += 1
+      }
+    }
+    return count
+  }
+
+  func countNrOfOccurrences(equalTo value: T) -> Int
+  {
+    var count: Int = 0
+    for row in field
+    {
+      for cell in row where cell == value
       {
         count += 1
       }
