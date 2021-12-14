@@ -55,6 +55,14 @@
 		1B7DDA4B2767C58C00F292D6 /* Day13Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA4A2767C58C00F292D6 /* Day13Part1.swift */; };
 		1B7DDA4C2767C58C00F292D6 /* Day13Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA4A2767C58C00F292D6 /* Day13Part1.swift */; };
 		1B7DDA4F2767CC9000F292D6 /* Day13Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA4D2767CACD00F292D6 /* Day13Test.swift */; };
+		1B7DDA522768B95600F292D6 /* Day14Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA512768B95600F292D6 /* Day14Input.swift */; };
+		1B7DDA532768B95600F292D6 /* Day14Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA512768B95600F292D6 /* Day14Input.swift */; };
+		1B7DDA552768B95E00F292D6 /* Day14Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA542768B95E00F292D6 /* Day14Part1.swift */; };
+		1B7DDA562768B95E00F292D6 /* Day14Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA542768B95E00F292D6 /* Day14Part1.swift */; };
+		1B7DDA582768B96800F292D6 /* Day14Part2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA572768B96800F292D6 /* Day14Part2.swift */; };
+		1B7DDA592768B96800F292D6 /* Day14Part2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA572768B96800F292D6 /* Day14Part2.swift */; };
+		1B7DDA5B2768BC9600F292D6 /* StringSubscriptIntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA5A2768BC9600F292D6 /* StringSubscriptIntExtension.swift */; };
+		1B7DDA5C2768BC9600F292D6 /* StringSubscriptIntExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA5A2768BC9600F292D6 /* StringSubscriptIntExtension.swift */; };
 		1B847DFE275CD2C80091D666 /* Day5Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B847DFD275CD2C80091D666 /* Day5Input.swift */; };
 		1B847E00275CD2D10091D666 /* Day5Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B847DFF275CD2D10091D666 /* Day5Part1.swift */; };
 		1B847E01275CD2D40091D666 /* Day5Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B847DFF275CD2D10091D666 /* Day5Part1.swift */; };
@@ -142,6 +150,10 @@
 		1B7DDA472767C53800F292D6 /* Day13Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day13Input.swift; sourceTree = "<group>"; };
 		1B7DDA4A2767C58C00F292D6 /* Day13Part1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day13Part1.swift; sourceTree = "<group>"; };
 		1B7DDA4D2767CACD00F292D6 /* Day13Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day13Test.swift; sourceTree = "<group>"; };
+		1B7DDA512768B95600F292D6 /* Day14Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day14Input.swift; sourceTree = "<group>"; };
+		1B7DDA542768B95E00F292D6 /* Day14Part1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day14Part1.swift; sourceTree = "<group>"; };
+		1B7DDA572768B96800F292D6 /* Day14Part2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day14Part2.swift; sourceTree = "<group>"; };
+		1B7DDA5A2768BC9600F292D6 /* StringSubscriptIntExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringSubscriptIntExtension.swift; sourceTree = "<group>"; };
 		1B847DFD275CD2C80091D666 /* Day5Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day5Input.swift; sourceTree = "<group>"; };
 		1B847DFF275CD2D10091D666 /* Day5Part1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day5Part1.swift; sourceTree = "<group>"; };
 		1B847E03275CEC620091D666 /* Day5Part2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day5Part2.swift; sourceTree = "<group>"; };
@@ -215,6 +227,7 @@
 				1B5F5364275CC7C0004D1BC5 /* Field2D.swift */,
 				1B7DDA3B2765FD8600F292D6 /* Graph.swift */,
 				1B7DDA402766038500F292D6 /* StringIsInAllCapsExtension.swift */,
+				1B7DDA5A2768BC9600F292D6 /* StringSubscriptIntExtension.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -246,6 +259,16 @@
 				1B7DDA4A2767C58C00F292D6 /* Day13Part1.swift */,
 			);
 			path = Day13;
+			sourceTree = "<group>";
+		};
+		1B7DDA502768B94200F292D6 /* Day14 */ = {
+			isa = PBXGroup;
+			children = (
+				1B7DDA512768B95600F292D6 /* Day14Input.swift */,
+				1B7DDA542768B95E00F292D6 /* Day14Part1.swift */,
+				1B7DDA572768B96800F292D6 /* Day14Part2.swift */,
+			);
+			path = Day14;
 			sourceTree = "<group>";
 		};
 		1B847DFC275CD2A20091D666 /* Day5 */ = {
@@ -329,6 +352,7 @@
 			children = (
 				1B5F5363275CC797004D1BC5 /* Common */,
 				1BEA09F727594A0200577B97 /* AdventOfCode2021Test */,
+				1B7DDA502768B94200F292D6 /* Day14 */,
 				1B7DDA462767C36400F292D6 /* Day13 */,
 				1B7DDA342765FC7300F292D6 /* Day12 */,
 				1B7DDA2A2764B35200F292D6 /* Day11 */,
@@ -481,6 +505,7 @@
 				1B7DDA392765FD1A00F292D6 /* Day12Part1.swift in Sources */,
 				1B847E0B275E2CCA0091D666 /* Day6Part1.swift in Sources */,
 				1B847E04275CEC620091D666 /* Day5Part2.swift in Sources */,
+				1B7DDA582768B96800F292D6 /* Day14Part2.swift in Sources */,
 				1B5F5361275BBBAF004D1BC5 /* BingoCard.swift in Sources */,
 				1B7DDA4427660A8E00F292D6 /* Day12Part2.swift in Sources */,
 				1B7DDA2F2764B37100F292D6 /* Day11Part1.swift in Sources */,
@@ -494,17 +519,20 @@
 				1B5F534F2759F6C1004D1BC5 /* Day3Part2.swift in Sources */,
 				1B7DDA362765FC8500F292D6 /* Day12Input.swift in Sources */,
 				1B7DDA412766038500F292D6 /* StringIsInAllCapsExtension.swift in Sources */,
+				1B7DDA522768B95600F292D6 /* Day14Input.swift in Sources */,
 				1BEA09F12758EB7F00577B97 /* Day2Part2.swift in Sources */,
 				1BEA09E12758031800577B97 /* Day1Part1.swift in Sources */,
 				1B847DFE275CD2C80091D666 /* Day5Input.swift in Sources */,
 				1B7DDA2327632FAF00F292D6 /* Day10Part1.swift in Sources */,
 				1BEA09ED2758E96000577B97 /* Day2Part1.swift in Sources */,
 				1B5F5359275BA82E004D1BC5 /* Day4Input.swift in Sources */,
+				1B7DDA5B2768BC9600F292D6 /* StringSubscriptIntExtension.swift in Sources */,
 				1B847E0F275FE08D0091D666 /* Day7Input.swift in Sources */,
 				1B7DDA3C2765FD8600F292D6 /* Graph.swift in Sources */,
 				1B847E15275FE5180091D666 /* Day7Part2.swift in Sources */,
 				1B5F5365275CC7C0004D1BC5 /* Field2D.swift in Sources */,
 				1B847E12275FE0970091D666 /* Day7Part1.swift in Sources */,
+				1B7DDA552768B95E00F292D6 /* Day14Part1.swift in Sources */,
 				1B5F535C275BA836004D1BC5 /* Day4Part2.swift in Sources */,
 				1B7DDA2C2764B36600F292D6 /* Day11Input.swift in Sources */,
 				1B7DDA4B2767C58C00F292D6 /* Day13Part1.swift in Sources */,
@@ -530,12 +558,15 @@
 				1BEA09FF27594BEC00577B97 /* Day1Input.swift in Sources */,
 				1B7DDA3F2766000900F292D6 /* GraphTest.swift in Sources */,
 				1BEA0A0027594BEE00577B97 /* Day1Part2.swift in Sources */,
+				1B7DDA592768B96800F292D6 /* Day14Part2.swift in Sources */,
 				1B7DDA2127632F7600F292D6 /* Day10Test.swift in Sources */,
 				1B5F53502759F6C1004D1BC5 /* Day3Part2.swift in Sources */,
 				1B7DDA332765320D00F292D6 /* Day11Part2.swift in Sources */,
 				1BEA0A0327594BF700577B97 /* Day2Part2.swift in Sources */,
 				1BEA09FD27594BD100577B97 /* Day1Part1.swift in Sources */,
 				1B5F5369275CC99E004D1BC5 /* Field2DTest.swift in Sources */,
+				1B7DDA532768B95600F292D6 /* Day14Input.swift in Sources */,
+				1B7DDA5C2768BC9600F292D6 /* StringSubscriptIntExtension.swift in Sources */,
 				1B7DDA2D2764B36600F292D6 /* Day11Input.swift in Sources */,
 				1B5F53532759F6E6004D1BC5 /* Day3Test.swift in Sources */,
 				1BEA0A0127594BF200577B97 /* Day2Part1.swift in Sources */,
@@ -555,6 +586,7 @@
 				1B5F534A2759F6AD004D1BC5 /* Day3Part1.swift in Sources */,
 				1B5F5366275CC7C1004D1BC5 /* Field2D.swift in Sources */,
 				1B5F535D275BA836004D1BC5 /* Day4Part2.swift in Sources */,
+				1B7DDA562768B95E00F292D6 /* Day14Part1.swift in Sources */,
 				1B847E1A276134750091D666 /* Day8Input.swift in Sources */,
 				1B847E01275CD2D40091D666 /* Day5Part1.swift in Sources */,
 				1BEA0A0227594BF400577B97 /* Day2Input.swift in Sources */,

@@ -94,5 +94,12 @@ import Foundation
 //part2Runner.run(input: Day12Input.PUZZLE_INPUT)
 
 // MARK: Day13
-let part1Runner: Day13Part1 = Day13Part1(verbose: false)
-part1Runner.run(input: Day13Input.PUZZLE_INPUT)
+//let part1Runner: Day13Part1 = Day13Part1(verbose: false)
+//part1Runner.run(input: Day13Input.PUZZLE_INPUT)
+
+// MARK: Day14
+//let part1Runner: Day14Part1 = Day14Part1(verbose: false)
+//part1Runner.run(input: Day14Input.PUZZLE_INPUT)
+
+let part2Runner: Day14Part2 = Day14Part2(verbose: false)
+part2Runner.run(input: Day14Input.PUZZLE_INPUT)

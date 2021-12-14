@@ -11,11 +11,17 @@ class Graph<T: Hashable>
 {
   typealias ShouldGoToVertex = ([T], T) -> Bool
   private var graph: [T: [T]]
-  private let shouldGoToVertex: ShouldGoToVertex
+  private let shouldGoToVertex: ShouldGoToVertex?
 
+    // TODO: Support directed graphs
+  init()
+  {
+    self.graph = [:]
+    self.shouldGoToVertex = nil
+  }
+  
   init(delegate: @escaping ShouldGoToVertex)
   {
-    // TODO: Support directed graphs
     self.graph = [:]
     self.shouldGoToVertex = delegate
   }
@@ -59,7 +65,7 @@ class Graph<T: Hashable>
       {
         numberOfPaths += 1
       }
-      else if shouldGoToVertex(from, edge)
+      else if shouldGoToVertex != nil && shouldGoToVertex!(from, edge)
       {
         var newPath: [T] = [T](from)
         newPath.append(edge)
@@ -68,5 +74,20 @@ class Graph<T: Hashable>
     }
 
     return numberOfPaths
+  }
+
+  func nodes() -> [T]
+  {
+    return Array(graph.keys)
+  }
+
+  // TODO: Unit test
+  subscript(hashable: T) -> T
+  {
+    for key in graph.keys where key == hashable
+    {
+      return key
+    }
+    assert(false, "Called non existant key")
   }
 }
