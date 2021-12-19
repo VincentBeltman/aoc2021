@@ -35,6 +35,15 @@
 		1B746196276F63DD008CECB7 /* Day17Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B746194276F63DD008CECB7 /* Day17Part1.swift */; };
 		1B746198276F6627008CECB7 /* Day17Part2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B746197276F6627008CECB7 /* Day17Part2.swift */; };
 		1B746199276F6627008CECB7 /* Day17Part2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B746197276F6627008CECB7 /* Day17Part2.swift */; };
+		1B74619C276F708B008CECB7 /* Day18Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74619B276F708B008CECB7 /* Day18Input.swift */; };
+		1B74619D276F708B008CECB7 /* Day18Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74619B276F708B008CECB7 /* Day18Input.swift */; };
+		1B74619F276F70CA008CECB7 /* Day18Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B74619E276F70CA008CECB7 /* Day18Test.swift */; };
+		1B7461A1276F7115008CECB7 /* Day18Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7461A0276F7115008CECB7 /* Day18Part1.swift */; };
+		1B7461A2276F7115008CECB7 /* Day18Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7461A0276F7115008CECB7 /* Day18Part1.swift */; };
+		1B7461A4276F717D008CECB7 /* SnailMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7461A3276F717D008CECB7 /* SnailMath.swift */; };
+		1B7461A5276F717D008CECB7 /* SnailMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7461A3276F717D008CECB7 /* SnailMath.swift */; };
+		1B7461A7276FCA58008CECB7 /* Day18Part2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7461A6276FCA58008CECB7 /* Day18Part2.swift */; };
+		1B7461A8276FCA58008CECB7 /* Day18Part2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7461A6276FCA58008CECB7 /* Day18Part2.swift */; };
 		1B7DDA1F27632F4300F292D6 /* Day10Input.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA1E27632F4300F292D6 /* Day10Input.swift */; };
 		1B7DDA2127632F7600F292D6 /* Day10Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA2027632F7600F292D6 /* Day10Test.swift */; };
 		1B7DDA2327632FAF00F292D6 /* Day10Part1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B7DDA2227632FAF00F292D6 /* Day10Part1.swift */; };
@@ -158,6 +167,11 @@
 		1B746191276F6394008CECB7 /* Day17Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day17Input.swift; sourceTree = "<group>"; };
 		1B746194276F63DD008CECB7 /* Day17Part1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day17Part1.swift; sourceTree = "<group>"; };
 		1B746197276F6627008CECB7 /* Day17Part2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day17Part2.swift; sourceTree = "<group>"; };
+		1B74619B276F708B008CECB7 /* Day18Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day18Input.swift; sourceTree = "<group>"; };
+		1B74619E276F70CA008CECB7 /* Day18Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day18Test.swift; sourceTree = "<group>"; };
+		1B7461A0276F7115008CECB7 /* Day18Part1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day18Part1.swift; sourceTree = "<group>"; };
+		1B7461A3276F717D008CECB7 /* SnailMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnailMath.swift; sourceTree = "<group>"; };
+		1B7461A6276FCA58008CECB7 /* Day18Part2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day18Part2.swift; sourceTree = "<group>"; };
 		1B7DDA1E27632F4300F292D6 /* Day10Input.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10Input.swift; sourceTree = "<group>"; };
 		1B7DDA2027632F7600F292D6 /* Day10Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10Test.swift; sourceTree = "<group>"; };
 		1B7DDA2227632FAF00F292D6 /* Day10Part1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Day10Part1.swift; sourceTree = "<group>"; };
@@ -270,6 +284,17 @@
 				1B746197276F6627008CECB7 /* Day17Part2.swift */,
 			);
 			path = Day17;
+			sourceTree = "<group>";
+		};
+		1B74619A276F707F008CECB7 /* Day18 */ = {
+			isa = PBXGroup;
+			children = (
+				1B74619B276F708B008CECB7 /* Day18Input.swift */,
+				1B7461A0276F7115008CECB7 /* Day18Part1.swift */,
+				1B7461A3276F717D008CECB7 /* SnailMath.swift */,
+				1B7461A6276FCA58008CECB7 /* Day18Part2.swift */,
+			);
+			path = Day18;
 			sourceTree = "<group>";
 		};
 		1B7DDA2A2764B35200F292D6 /* Day11 */ = {
@@ -413,6 +438,7 @@
 			children = (
 				1B5F5363275CC797004D1BC5 /* Common */,
 				1BEA09F727594A0200577B97 /* AdventOfCode2021Test */,
+				1B74619A276F707F008CECB7 /* Day18 */,
 				1B746190276F6389008CECB7 /* Day17 */,
 				1B7DDA65276DE51400F292D6 /* Day16 */,
 				1B7DDA5D276A0C9600F292D6 /* Day15 */,
@@ -468,6 +494,7 @@
 				1B7DDA3E2766000900F292D6 /* GraphTest.swift */,
 				1B7DDA4D2767CACD00F292D6 /* Day13Test.swift */,
 				1B74618A276DEBB4008CECB7 /* Day16Test.swift */,
+				1B74619E276F70CA008CECB7 /* Day18Test.swift */,
 			);
 			path = AdventOfCode2021Test;
 			sourceTree = "<group>";
@@ -567,6 +594,7 @@
 				1B847E00275CD2D10091D666 /* Day5Part1.swift in Sources */,
 				1B847E08275E2C780091D666 /* Day6Input.swift in Sources */,
 				1B5F5356275BA81F004D1BC5 /* Day4Part1.swift in Sources */,
+				1B7461A1276F7115008CECB7 /* Day18Part1.swift in Sources */,
 				1B7DDA392765FD1A00F292D6 /* Day12Part1.swift in Sources */,
 				1B847E0B275E2CCA0091D666 /* Day6Part1.swift in Sources */,
 				1B847E04275CEC620091D666 /* Day5Part2.swift in Sources */,
@@ -577,6 +605,7 @@
 				1B847E282762780B0091D666 /* Day9Part1.swift in Sources */,
 				1BEA09EA275804CB00577B97 /* PartRunner.swift in Sources */,
 				1B7DDA322765320D00F292D6 /* Day11Part2.swift in Sources */,
+				1B7461A7276FCA58008CECB7 /* Day18Part2.swift in Sources */,
 				1B847E19276134730091D666 /* Day8Input.swift in Sources */,
 				1B7DDA282763341200F292D6 /* Day10Part2.swift in Sources */,
 				1BEA09E82758037500577B97 /* Day1Part2.swift in Sources */,
@@ -589,6 +618,7 @@
 				1BEA09F12758EB7F00577B97 /* Day2Part2.swift in Sources */,
 				1BEA09E12758031800577B97 /* Day1Part1.swift in Sources */,
 				1B847DFE275CD2C80091D666 /* Day5Input.swift in Sources */,
+				1B74619C276F708B008CECB7 /* Day18Input.swift in Sources */,
 				1B7DDA2327632FAF00F292D6 /* Day10Part1.swift in Sources */,
 				1BEA09ED2758E96000577B97 /* Day2Part1.swift in Sources */,
 				1B5F5359275BA82E004D1BC5 /* Day4Input.swift in Sources */,
@@ -600,6 +630,7 @@
 				1B847E15275FE5180091D666 /* Day7Part2.swift in Sources */,
 				1B5F5365275CC7C0004D1BC5 /* Field2D.swift in Sources */,
 				1B847E12275FE0970091D666 /* Day7Part1.swift in Sources */,
+				1B7461A4276F717D008CECB7 /* SnailMath.swift in Sources */,
 				1B7DDA552768B95E00F292D6 /* Day14Part1.swift in Sources */,
 				1B7DDA62276A0D0000F292D6 /* Day15Part1.swift in Sources */,
 				1B5F535C275BA836004D1BC5 /* Day4Part2.swift in Sources */,
@@ -627,6 +658,7 @@
 			files = (
 				1B7DDA292763341400F292D6 /* Day10Part2.swift in Sources */,
 				1B746196276F63DD008CECB7 /* Day17Part1.swift in Sources */,
+				1B74619D276F708B008CECB7 /* Day18Input.swift in Sources */,
 				1B746199276F6627008CECB7 /* Day17Part2.swift in Sources */,
 				1B847E22276141140091D666 /* Day8Test.swift in Sources */,
 				1B847E05275CEE350091D666 /* Day5Part2.swift in Sources */,
@@ -635,16 +667,20 @@
 				1BEA09FF27594BEC00577B97 /* Day1Input.swift in Sources */,
 				1B7DDA3F2766000900F292D6 /* GraphTest.swift in Sources */,
 				1BEA0A0027594BEE00577B97 /* Day1Part2.swift in Sources */,
+				1B7461A8276FCA58008CECB7 /* Day18Part2.swift in Sources */,
 				1B7DDA592768B96800F292D6 /* Day14Part2.swift in Sources */,
 				1B7DDA2127632F7600F292D6 /* Day10Test.swift in Sources */,
 				1B5F53502759F6C1004D1BC5 /* Day3Part2.swift in Sources */,
+				1B7461A5276F717D008CECB7 /* SnailMath.swift in Sources */,
 				1B7DDA332765320D00F292D6 /* Day11Part2.swift in Sources */,
 				1BEA0A0327594BF700577B97 /* Day2Part2.swift in Sources */,
 				1BEA09FD27594BD100577B97 /* Day1Part1.swift in Sources */,
 				1B5F5369275CC99E004D1BC5 /* Field2DTest.swift in Sources */,
 				1B7DDA532768B95600F292D6 /* Day14Input.swift in Sources */,
 				1B7DDA5C2768BC9600F292D6 /* StringSubscriptIntExtension.swift in Sources */,
+				1B74619F276F70CA008CECB7 /* Day18Test.swift in Sources */,
 				1B7DDA2D2764B36600F292D6 /* Day11Input.swift in Sources */,
+				1B7461A2276F7115008CECB7 /* Day18Part1.swift in Sources */,
 				1B5F53532759F6E6004D1BC5 /* Day3Test.swift in Sources */,
 				1BEA0A0127594BF200577B97 /* Day2Part1.swift in Sources */,
 				1B847E1D2761349B0091D666 /* Day8Part1.swift in Sources */,
