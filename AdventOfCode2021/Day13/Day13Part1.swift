@@ -39,7 +39,7 @@ class Day13Part1: PartRunner
       }
 //      break // Part 1 is 1 fold only
     }
-    print(field.toString())
+    log("\(field)")
 
     return "\(field.countNrOfOccurrences(equalTo: "#"))"
   }

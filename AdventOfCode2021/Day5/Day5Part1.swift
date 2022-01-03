@@ -14,7 +14,7 @@ class Day5Part1: PartRunner
   override func doStuff(with input: String) -> String
   {
     parse(input)
-    log(field.toString())
+    log("\(field)")
     
     return "\(field.countNrOfOccurrences(biggerThanOrEqualTo: 2))"
   }

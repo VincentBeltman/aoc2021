@@ -10,7 +10,7 @@ import Foundation
 typealias StringField2D = Field2D<String>
 typealias IntField2D = Field2D<Int>
 
-class Field2D<T: Comparable>
+class Field2D<T: Comparable>: CustomStringConvertible
 {
   class Coordinate: Equatable
   {
@@ -58,6 +58,11 @@ class Field2D<T: Comparable>
     self.height = 0
     self.width = 0
     self.diagonalsEnabled = enableDiagonals
+  }
+
+  func getDefaultValue() -> T
+  {
+    return defaultValue
   }
 
   func resize(to coordinate: Coordinate)
@@ -137,7 +142,7 @@ class Field2D<T: Comparable>
     return ((coordinate.y >= 0) && (coordinate.x >= 0) && (coordinate.y < height) && (coordinate.x < width)) ? field[coordinate.y][coordinate.x] : nil
   }
 
-  func toString() -> String
+  var description: String
   {
     var result = ""
     for row in field
@@ -211,30 +216,47 @@ class Field2D<T: Comparable>
     }
   }
 
-  func getNeighbourCoordinates(of coordinate: Coordinate) -> [Coordinate]
+  func getNeighbourCoordinates(of coordinate: Coordinate, includingSelf: Bool = false) -> [Coordinate]
   {
     var neighbourCoordinates: [Coordinate] = []
-
-    neighbourCoordinates.append(Coordinate(y: coordinate.y-1, x: coordinate.x))
-    neighbourCoordinates.append(Coordinate(y: coordinate.y, x: coordinate.x-1))
-    neighbourCoordinates.append(Coordinate(y: coordinate.y+1, x: coordinate.x))
-    neighbourCoordinates.append(Coordinate(y: coordinate.y, x: coordinate.x+1))
 
     if diagonalsEnabled
     {
       neighbourCoordinates.append(Coordinate(y: coordinate.y-1, x: coordinate.x-1))
-      neighbourCoordinates.append(Coordinate(y: coordinate.y+1, x: coordinate.x-1))
-      neighbourCoordinates.append(Coordinate(y: coordinate.y+1, x: coordinate.x+1))
+      neighbourCoordinates.append(Coordinate(y: coordinate.y-1, x: coordinate.x))
       neighbourCoordinates.append(Coordinate(y: coordinate.y-1, x: coordinate.x+1))
+
+      neighbourCoordinates.append(Coordinate(y: coordinate.y, x: coordinate.x-1))
+      if includingSelf
+      {
+        neighbourCoordinates.append(Coordinate(y: coordinate.y, x: coordinate.x))
+      }
+      neighbourCoordinates.append(Coordinate(y: coordinate.y, x: coordinate.x+1))
+
+      neighbourCoordinates.append(Coordinate(y: coordinate.y+1, x: coordinate.x-1))
+      neighbourCoordinates.append(Coordinate(y: coordinate.y+1, x: coordinate.x))
+      neighbourCoordinates.append(Coordinate(y: coordinate.y+1, x: coordinate.x+1))
+    }
+    else
+    {
+      neighbourCoordinates.append(Coordinate(y: coordinate.y-1, x: coordinate.x))
+      neighbourCoordinates.append(Coordinate(y: coordinate.y, x: coordinate.x-1))
+      if includingSelf
+      {
+        neighbourCoordinates.append(Coordinate(y: coordinate.y, x: coordinate.x))
+      }
+      neighbourCoordinates.append(Coordinate(y: coordinate.y+1, x: coordinate.x))
+      neighbourCoordinates.append(Coordinate(y: coordinate.y, x: coordinate.x+1))
+
     }
 
     return neighbourCoordinates
   }
 
-  func getNeighbours(of coordinate: Coordinate) -> [T]
+  func getNeighbours(of coordinate: Coordinate, includingSelf: Bool = false) -> [T]
   {
     var neighbours: [T] = []
-    for neighbour in getNeighbourCoordinates(of: coordinate)
+    for neighbour in getNeighbourCoordinates(of: coordinate, includingSelf: includingSelf)
     {
       if let neighbourValue: T = getValue(at: neighbour)
       {
@@ -242,6 +264,24 @@ class Field2D<T: Comparable>
       }
     }
     return neighbours
+  }
+
+  func addBox()
+  {
+    if width > 0 && height > 0
+    {
+      // Left
+      for i in 0..<field.count
+      {
+        field[i].insert(defaultValue, at: 0)
+      }
+      width += 1
+      // Top
+      height += 1
+      field.insert([T](repeating: defaultValue, count: height), at: 0)
+    }
+    // Right + bottom
+    resize(to: Coordinate(y: height, x: width))
   }
 }
 

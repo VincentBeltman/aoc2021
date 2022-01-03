@@ -158,7 +158,6 @@ class Day19Part2: PartRunner
 
     func tryCombine(with their: Scanner) -> Coordinate?
     {
-      var combined: Bool = false
       var myIndex: Int = 0
       var theirIndex: Int = 0
       var matches: [Int: (Set<Coordinate>, Coordinate)] = [:]
@@ -192,7 +191,6 @@ class Day19Part2: PartRunner
         if matchedCoordinates.count >= TIPPING_POINT
         {
           offset = skip.1.1
-          combined = true
           for theirEdge in their.edges
           {
             // TODO: Don't add edges that are way too big

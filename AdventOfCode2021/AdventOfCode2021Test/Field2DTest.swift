@@ -282,6 +282,19 @@ class Field2DTest: XCTestCase
     XCTAssert(neighboursof22.contains(5))
     XCTAssert(neighboursof22.contains(7))
     XCTAssert(neighboursof22.count == 2)
+
+    let neighboursof22b: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 2, x: 2), includingSelf: true)
+    XCTAssert(neighboursof22b.contains(5))
+    XCTAssert(neighboursof22b.contains(7))
+    XCTAssert(neighboursof22b.contains(8))
+    XCTAssert(neighboursof22b.count == 3)
+
+    let neighboursof12b: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 1, x: 2), includingSelf: true)
+    XCTAssert(neighboursof12b.contains(2))
+    XCTAssert(neighboursof12b.contains(4))
+    XCTAssert(neighboursof12b.contains(5))
+    XCTAssert(neighboursof12b.contains(8))
+    XCTAssert(neighboursof12b.count == 4)
   }
 
   func testNeighboursDiagonal()
@@ -363,6 +376,58 @@ class Field2DTest: XCTestCase
     XCTAssert(neighboursof22.contains(5))
     XCTAssert(neighboursof22.contains(7))
     XCTAssert(neighboursof22.count == 3)
+
+    let neighboursof22b: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 2, x: 2), includingSelf: true)
+    XCTAssert(neighboursof22b.contains(4))
+    XCTAssert(neighboursof22b.contains(5))
+    XCTAssert(neighboursof22b.contains(7))
+    XCTAssert(neighboursof22b.contains(8))
+    XCTAssert(neighboursof22b.count == 4)
+
+    let neighboursof12b: [Int] = intField.getNeighbours(of: IntField2D.Coordinate(y: 1, x: 2), includingSelf: true)
+    XCTAssert(neighboursof12b.contains(1))
+    XCTAssert(neighboursof12b.contains(2))
+    XCTAssert(neighboursof12b.contains(4))
+    XCTAssert(neighboursof12b.contains(5))
+    XCTAssert(neighboursof12b.contains(7))
+    XCTAssert(neighboursof12b.contains(8))
+    XCTAssert(neighboursof12b.count == 6)
+  }
+
+  func testAddBox()
+  {
+    let intField: IntField2D = IntField2D(defaultValue: 0)
+    intField.addBox()
+    XCTAssert(1 == intField.getHeight())
+    XCTAssert(1 == intField.getWidth())
+    XCTAssert(0 == intField.getValue(at: IntField2D.Coordinate(y: 0, x: 0)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: -1, x: 0)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: -1, x: -1)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: -1, x: 1)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: 0, x: -1)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: 1, x: 0)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: 0, x: 1)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: 1, x: 1)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: 1, x: -1)))
+
+    intField.setValue(1, at: IntField2D.Coordinate(y: 0, x: 0))
+    intField.addBox()
+    XCTAssert(3 == intField.getHeight())
+    XCTAssert(3 == intField.getWidth())
+    XCTAssert(0 == intField.getValue(at: IntField2D.Coordinate(y: 0, x: 0)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: -1, x: 0)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: -1, x: -1)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: -1, x: 1)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: 0, x: -1)))
+    XCTAssert(nil == intField.getValue(at: IntField2D.Coordinate(y: 1, x: -1)))
+    XCTAssert(0 == intField.getValue(at: IntField2D.Coordinate(y: 0, x: 1)))
+    XCTAssert(0 == intField.getValue(at: IntField2D.Coordinate(y: 0, x: 2)))
+    XCTAssert(0 == intField.getValue(at: IntField2D.Coordinate(y: 1, x: 0)))
+    XCTAssert(1 == intField.getValue(at: IntField2D.Coordinate(y: 1, x: 1)))
+    XCTAssert(0 == intField.getValue(at: IntField2D.Coordinate(y: 1, x: 2)))
+    XCTAssert(0 == intField.getValue(at: IntField2D.Coordinate(y: 2, x: 0)))
+    XCTAssert(0 == intField.getValue(at: IntField2D.Coordinate(y: 2, x: 1)))
+    XCTAssert(0 == intField.getValue(at: IntField2D.Coordinate(y: 2, x: 2)))
   }
 
   func testDay5Part1()
@@ -381,6 +446,12 @@ class Field2DTest: XCTestCase
   {
     let partRunner: Day9Part1 = Day9Part1(verbose: true)
     XCTAssert("15" == partRunner.doStuff(with: Day9Input.EXAMPLE))
+  }
+
+  func testDay20Part1()
+  {
+    let partRunner: Day20Part1 = Day20Part1(verbose: true)
+    XCTAssert("35" == partRunner.doStuff(with: Day20Input.EXAMPLE))
   }
 }
 
