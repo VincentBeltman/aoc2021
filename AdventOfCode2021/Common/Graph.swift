@@ -88,6 +88,6 @@ class Graph<T: Hashable>
     {
       return key
     }
-    assert(false, "Called non existant key")
+    fatalError("Called non existant key")
   }
 }
